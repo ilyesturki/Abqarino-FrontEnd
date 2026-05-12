@@ -18,6 +18,7 @@ import authOptions from "@/lib/NextAuth/authOptions";
 import BreadCrumb from "@/components/Common/BreadCrumb";
 
 import CustomDropDownMenu from "@/components/Common/CustomDropDownMenu";
+import ChatWidget from "@/components/Common/ChatWidget";
 
 export default async function RootLayout({
   children,
@@ -47,6 +48,7 @@ export default async function RootLayout({
             {/* <PageTitle /> */}
             {children}
           </div>
+          <ChatWidget />
         </main>
       </SidebarInset>
     </SidebarProvider>

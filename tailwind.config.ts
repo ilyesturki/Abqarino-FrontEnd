@@ -94,6 +94,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        fadeSlideIn: {
+          from: { opacity: "0", transform: "translateY(6px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
         "caret-blink": {
           "0%,70%,100%": { opacity: "1" },
           "20%,50%": { opacity: "0" },
@@ -104,6 +108,7 @@ export default {
         },
       },
       animation: {
+        in: "fadeSlideIn 0.2s ease-out",
         "caret-blink": "caret-blink 1.25s ease-out infinite",
         gradient: "gradient-shift 3s infinite ease-in-out",
       },
