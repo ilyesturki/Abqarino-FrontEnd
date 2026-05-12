@@ -90,7 +90,7 @@ export default function QRScanner() {
             // setResult(data.message || "✅ Access Granted");
             setResult(data.message || "✅ Access Granted");
 
-            let seconds = 10;
+            let seconds = 16;
             setCountdown(seconds);
 
             const interval = setInterval(() => {
@@ -204,7 +204,7 @@ export default function QRScanner() {
                         <div
                           className="h-full bg-green-500 transition-all duration-1000"
                           style={{
-                            width: `${(countdown / 10) * 100}%`,
+                            width: `${(countdown / 16) * 100}%`,
                           }}
                         />
                       </div>
