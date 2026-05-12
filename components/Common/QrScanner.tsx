@@ -2,14 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Html5Qrcode } from "html5-qrcode";
-import {
-  QrCode,
-  CheckCircle2,
-  RotateCcw,
-  Loader2,
-} from "lucide-react";
+import { QrCode, CheckCircle2, RotateCcw, Loader2 } from "lucide-react";
 
 export default function QRScanner() {
+  const [countdown, setCountdown] = useState<number | null>(null);
   const scannerRef = useRef<Html5Qrcode | null>(null);
   const isProcessingRef = useRef(false);
 
@@ -91,7 +87,21 @@ export default function QRScanner() {
               throw new Error(data.message || "Verification failed");
             }
 
+            // setResult(data.message || "✅ Access Granted");
             setResult(data.message || "✅ Access Granted");
+
+            let seconds = 10;
+            setCountdown(seconds);
+
+            const interval = setInterval(() => {
+              seconds--;
+
+              setCountdown(seconds);
+
+              if (seconds <= 0) {
+                clearInterval(interval);
+              }
+            }, 1000);
           } catch (error) {
             console.error(error);
             setResult("❌ Invalid or expired QR");
@@ -142,7 +152,6 @@ export default function QRScanner() {
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="overflow-hidden rounded-3xl border bg-white shadow-xl">
-
           {/* Header */}
           <div className="flex items-center gap-3 border-b px-6 py-5">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-black text-white">
@@ -178,6 +187,44 @@ export default function QRScanner() {
           {result && (
             <div className="border-t px-5 py-4">
               <div className="flex items-start gap-3">
+                <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5" />
+
+                <div className="flex-1">
+                  <p className="text-sm font-semibold">Access Granted</p>
+
+                  <p className="text-xs text-gray-600 mt-1">{result}</p>
+
+                  {countdown !== null && countdown > 0 && (
+                    <div className="mt-3 rounded-xl bg-green-50 border border-green-200 p-3">
+                      <p className="text-sm font-medium text-green-700">
+                        🚧 The gate will close in {countdown}s
+                      </p>
+
+                      <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-green-100">
+                        <div
+                          className="h-full bg-green-500 transition-all duration-1000"
+                          style={{
+                            width: `${(countdown / 10) * 100}%`,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  <button
+                    onClick={restartScanner}
+                    className="mt-4 bg-black text-white px-4 py-2 rounded-xl text-xs flex items-center gap-2"
+                  >
+                    <RotateCcw className="h-4 w-4" />
+                    Scan again
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+          {/* {result && (
+            <div className="border-t px-5 py-4">
+              <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 text-green-500" />
 
                 <div className="flex-1">
@@ -194,8 +241,7 @@ export default function QRScanner() {
                 </div>
               </div>
             </div>
-          )}
-
+          )} */}
         </div>
       </div>
     </div>
