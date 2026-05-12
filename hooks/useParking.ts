@@ -10,17 +10,20 @@ export interface ParkingSpot {
 }
 
 const generateFakeSpots = (realSpots: ParkingSpot[]): ParkingSpot[] => {
-  const fakeSpots: ParkingSpot[] = [];
+  // const fakeSpots: ParkingSpot[] = [];
 
-  for (let i = 2; i <= 8; i++) {
-    fakeSpots.push({
-      id: i,
-      spotNumber: `P${i}`,
-      status: Math.random() > 0.5 ? "available" : "occupied",
-    });
-  }
+  // for (let i = 2; i <= 8; i++) {
+  //   fakeSpots.push({
+  //     id: i,
+  //     spotNumber: `P${i}`,
+  //     status: Math.random() > 0.5 ? "available" : "occupied",
+  //   });
+  // }
 
-  return [...realSpots, ...fakeSpots];
+  return [
+    ...realSpots,
+    // ...fakeSpots
+  ];
 };
 
 export default function useParking() {
