@@ -284,7 +284,7 @@ export default function ChatWidget() {
             <MessageBubble key={msg.id} message={msg} />
           ))}
           {/* Quick Questions */}
-          {messages.length <= 1 && (
+          {!isLoading && (
             <div className="flex flex-wrap gap-2 mb-2">
               {quickQuestions.map((q) => (
                 <button
@@ -313,7 +313,7 @@ export default function ChatWidget() {
             value={input}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
-            placeholder="Ask about parking, QR code, reservation..."
+            placeholder="Ask about parking..."
             rows={1}
             className="flex-1 resize-none bg-white/7 border border-white/10 rounded-xl px-3.5 py-2.5 text-sm text-grayscale-600 placeholder-slate-500 outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/20 transition-colors font-mono leading-relaxed"
             style={{ maxHeight: "90px" }}
