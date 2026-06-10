@@ -26,8 +26,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Smart Parking",
-  description: "Smart Parking",
+  title: "Abqarino",
+  description: "Abqarino",
   icons: {
     icon: "/imgs/abqarinoLogo.png", // Path to your icon in public directory
   },

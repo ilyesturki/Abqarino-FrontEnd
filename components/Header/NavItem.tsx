@@ -1,3 +1,4 @@
+import { Link } from "@/i18n/navigation";
 import { LucideIcon } from "lucide-react";
 
 interface NavItemProps {
@@ -15,7 +16,7 @@ export default function NavItem({
 }: NavItemProps) {
   return (
     <li>
-      <a
+      <Link
         href={href}
         className={`
           group
@@ -57,7 +58,7 @@ export default function NavItem({
             "
           />
         )}
-      </a>
+      </Link>
     </li>
   );
 }

@@ -29,7 +29,7 @@ export default function Features() {
       title: "Parcours Adaptatif",
       description:
         "Notre IA identifie tes points faibles et génère des exercices sur-mesure pour progresser sans perdre de temps.",
-      tag: "Smart Learning",
+      tag: "Abqarino Learning",
       highlight: true,
     },
     {

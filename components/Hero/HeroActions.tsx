@@ -7,7 +7,7 @@ export default function HeroActions() {
       <CustomButton
         title="Calculer votre moyenne"
         icon={faLocationArrow}
-        link="/fr/moyenne"
+        link="/moyenne"
         mode="primary"
       />
       <CustomButton

@@ -27,7 +27,7 @@ export default function ParkingDashboard() {
               <ParkingCircle className="h-9 w-9 text-green-900" />
               <div>
                 <h1 className="text-3xl font-bold tracking-tight text-green-900">
-                  Smart Parking Dashboard
+                  Abqarino Dashboard
                 </h1>
                 <p className="text-sm text-slate-500">
                   Real-time parking monitoring system

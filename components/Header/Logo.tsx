@@ -1,7 +1,9 @@
+import { Link } from "@/i18n/navigation";
+
 export default function Logo() {
   return (
-    <a
-      href="#"
+    <Link
+      href="/"
       className="mt-1 ml-1 group flex items-center gap-1 transition-transform duration-300 hover:scale-[1.02]"
     >
       <div className="relative mt-1.5 ">
@@ -22,6 +24,6 @@ export default function Logo() {
           Apprendre • Construire • Réussir
         </p>
       </div>
-    </a>
+    </Link>
   );
 }

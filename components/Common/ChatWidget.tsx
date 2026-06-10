@@ -190,7 +190,7 @@ export default function ChatWidget() {
   };
 
   const quickQuestions = [
-    "How does smart parking work?",
+    "How does Abqarino work?",
     "How to reserve a place?",
     "Where is my QR code?",
     "How to scan the QR code?",

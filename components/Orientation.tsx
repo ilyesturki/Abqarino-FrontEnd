@@ -69,7 +69,7 @@ export default function Orientation() {
             <CustomButton
               title="Tester le simulateur"
               icon={faLocationArrow}
-              link="/fr/moyenne"
+              link="/moyenne"
               mode="primary"
             />
           </div>

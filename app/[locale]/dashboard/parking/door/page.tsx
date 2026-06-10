@@ -27,7 +27,7 @@ const DoorQrDisplay = () => {
       {/* HEADER */}
       <div className="text-center mb-8">
         <h1 className="text-3xl font-bold text-green-900 tracking-tight">
-          Smart Parking Access
+        Abqarino Access
         </h1>
         <p className="text-gray-500 mt-2">Scan the QR code to open the gate</p>
       </div>

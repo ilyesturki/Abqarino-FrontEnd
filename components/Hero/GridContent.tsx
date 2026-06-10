@@ -23,13 +23,13 @@ const GridContent = () => {
           </p>
           <div className="flex gap-3 flex-wrap">
             <a
-              href="#pricing"
+              href="/#pricing"
               className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-bold text-white1 bg-accent1 decoration-none cursor-pointer border-none transition-opacity duration-150 hover:opacity-88 hover:-translate-y-0.5"
             >
               Commencer gratuitement
             </a>
             <a
-              href="/fr/moyenne"
+              href="/moyenne"
               className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-bold text-ink bg-transparent border-[1.5px] border-line decoration-none cursor-pointer transition-opacity duration-150 hover:opacity-88 hover:-translate-y-0.5"
             >
               Voir les cours
