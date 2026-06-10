@@ -41,7 +41,7 @@ export default function LocaleSwitcherSelect({
       router.replace({ pathname, query, ...params }, { locale });
     });
   }
-  useEffect(() => {
+   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
         dropdownRef.current &&
@@ -64,7 +64,7 @@ export default function LocaleSwitcherSelect({
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="max-md:w-full flex max-md:justify-center items-center gap-1.5 px-3 py-2 text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border rounded-md"
+        className="flex items-center gap-1.5 bg-accent-light text-accent-dim text-xs font-bold tracking-widest px-3 py-2.5 rounded-full border border-accent-2/30"
       >
         <Image
           src={localeData[selectedLocale].flag}
@@ -80,12 +80,12 @@ export default function LocaleSwitcherSelect({
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 mt-2 w-full bg-white dark:bg-gray-700 border rounded-md shadow-lg z-50">
+        <div className="absolute left-0 mt-2 w-full bg-accent-light text-accent-dim text-xs font-bold tracking-widest rounded-md border border-accent-2/30 z-50">
           {availableLocales.map((locale) => (
             <button
               key={locale}
               onClick={() => handleSelect(locale)}
-              className="flex items-center gap-1.5 px-2 py-2 w-full text-left hover:bg-gray-100 dark:hover:bg-gray-600"
+              className="flex items-center gap-1.5 px-2 py-2 w-full text-left hover:opacity-70 "
             >
               <Image
                 src={localeData[locale].flag}

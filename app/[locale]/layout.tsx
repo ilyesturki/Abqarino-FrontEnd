@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title: "Smart Parking",
   description: "Smart Parking",
   icons: {
-    icon: "/imgs/right-logo.png", // Path to your icon in public directory
+    icon: "/imgs/abqarinoLogo.png", // Path to your icon in public directory
   },
 };
 
@@ -51,9 +51,9 @@ export default async function RootLayout({
       >
         <Toaster position="top-right" reverseOrder={true} />
         <StoreProvider>
-          <NextSessionProvider>
-            <NextIntlClientProvider>{children}</NextIntlClientProvider>
-          </NextSessionProvider>
+        <NextSessionProvider>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </NextSessionProvider>
         </StoreProvider>
       </body>
     </html>

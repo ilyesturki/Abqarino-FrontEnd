@@ -54,18 +54,18 @@ const ThemeToggle = () => {
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <button
         onClick={toggleDropDown}
-        className="inline-flex justify-center w-full px-3 gap-x-2 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border rounded-md"
+        className="flex items-center gap-1.5 bg-accent-light text-accent-dim text-xs font-bold tracking-widest px-3 py-2.5 rounded-full border border-accent-2/30"
       >
         {themes[theme].Icon}
         {themes[theme].name}
       </button>
       {dropDownOpen && (
-        <div className="absolute right-0 mt-2 w-36 origin-top-right bg-white dark:bg-gray-700 border rounded-md shadow-lg z-50">
+        <div className="absolute right-0 w-36 mt-2  bg-accent-light text-accent-dim text-xs font-bold tracking-widest rounded-md border border-accent-2/30 z-50">
           {(Object.keys(themes) as ThemeType[]).map((key) => (
             <button
               key={key}
               onClick={() => handleThemeChange(key)}
-              className={`flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 ${
+              className={`flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:opacity-70 ${
                 theme === key ? "font-semibold" : ""
               }`}
             >

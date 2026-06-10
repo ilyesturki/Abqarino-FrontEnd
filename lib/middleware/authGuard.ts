@@ -12,10 +12,6 @@ export async function authGuard(
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
   const role = typeof token?.role === "string" ? token.role : undefined;
-  // const userCategory =
-  //   typeof token?.userCategory === "string" ? token.userCategory : undefined;
-  // const userService =
-  //   typeof token?.userService === "string" ? token.userService : undefined;
 
   if (normalizedPathname.startsWith("/auth")) {
     if (token) {
@@ -23,6 +19,10 @@ export async function authGuard(
         role === "admin" ? "/dashboard/parking/door" : "/dashboard/parking";
       return NextResponse.redirect(new URL(redirectTo, req.url));
     }
+    return;
+  }
+
+  if (normalizedPathname.startsWith("/moyenne")) {
     return;
   }
 
@@ -40,27 +40,6 @@ export async function authGuard(
     if (role === "admin") return;
     return redirectUnauthorized(req);
   }
-
-  // if (normalizedPathname.startsWith("/dashboard/panel")) {
-  //   const allowedCategories = ["top-management", "corporaite"];
-  //   const allowedServices = ["qualité", "productions", "maintenance"];
-  //   if (role === "user" && allowedCategories.includes(userCategory || "")) {
-  //     if (normalizedPathname.startsWith("/dashboard/panel/tag-panel/tag")) {
-  //       if (allowedServices.includes(userService || "")) return;
-  //       return redirectUnauthorized(req);
-  //     }
-  //     return;
-  //   }
-
-  //   return redirectUnauthorized(req);
-  // }
-
-  // if (normalizedPathname.startsWith("/dashboard/fps")) {
-  //   const allowedCategories = ["operational", "midel-management"];
-  //   if (role === "user" && allowedCategories.includes(userCategory || ""))
-  //     return;
-  //   return redirectUnauthorized(req);
-  // }
 
   return;
 }
