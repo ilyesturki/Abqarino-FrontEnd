@@ -29,7 +29,7 @@ const GridContent = () => {
               Commencer gratuitement
             </a>
             <a
-              href="#features"
+              href="/fr/moyenne"
               className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-bold text-ink bg-transparent border-[1.5px] border-line decoration-none cursor-pointer transition-opacity duration-150 hover:opacity-88 hover:-translate-y-0.5"
             >
               Voir les cours

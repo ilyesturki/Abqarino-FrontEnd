@@ -5,9 +5,9 @@ export default function HeroActions() {
   return (
     <div className="flex gap-3 flex-wrap">
       <CustomButton
-        title="Commencer gratuitement"
+        title="Calculer votre moyenne"
         icon={faLocationArrow}
-        link="#pricing"
+        link="/fr/moyenne"
         mode="primary"
       />
       <CustomButton
