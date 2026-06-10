@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ThemeType } from "./theme.constants";
 
 export default function useThemeToggle() {
-  const [theme, setTheme] = useState<ThemeType>("light");
+  const [theme, setTheme] = useState<ThemeType>("dark");
 
   useEffect(() => {
     const stored = localStorage.getItem("theme") as ThemeType | null;
@@ -19,10 +19,7 @@ export default function useThemeToggle() {
   }, []);
 
   useEffect(() => {
-    document.documentElement.classList.toggle(
-      "dark",
-      theme === "dark"
-    );
+    document.documentElement.classList.toggle("dark", theme === "dark");
 
     localStorage.setItem("theme", theme);
   }, [theme]);

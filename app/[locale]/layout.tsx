@@ -45,15 +45,15 @@ export default async function RootLayout({
     notFound();
   }
   return (
-    <html lang={locale}>
+    <html lang={locale} className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Toaster position="top-right" reverseOrder={true} />
         <StoreProvider>
-        <NextSessionProvider>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        </NextSessionProvider>
+          <NextSessionProvider>
+            <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          </NextSessionProvider>
         </StoreProvider>
       </body>
     </html>
