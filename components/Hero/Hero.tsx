@@ -6,7 +6,7 @@ import HeroSection from "./HeroSection";
 
 export default function Hero() {
   return (
-    <div className="relative pt-16">
+    <div className="relative pt-[70px]">
       <CustomSpotLights />
       <GridBackground />
       {/* <GridContent /> */}

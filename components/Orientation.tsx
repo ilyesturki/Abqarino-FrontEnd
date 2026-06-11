@@ -1,5 +1,6 @@
 import { faLocationArrow } from "@fortawesome/free-solid-svg-icons";
 import CustomButton from "./ui/CustomButton";
+import SectionHeader from "./SectionHeader";
 
 export default function Orientation() {
   const subjects = [
@@ -16,6 +17,14 @@ export default function Orientation() {
       className="py-24 px-6 bg-gray-50 dark:bg-black-100 transition-colors duration-500"
       id="orientation"
     >
+      <SectionHeader
+        sectionTitle="Orientation"
+        title="Simulateur BAC & "
+        customWord="Orientation"
+        desc="Calcule ton score exact selon les coefficients officiels tunisiens
+              et visualise instantanément tes chances d'admission dans les
+              meilleures écoles."
+      />
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Text Content */}
@@ -26,7 +35,7 @@ export default function Orientation() {
 
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white leading-[1.1] tracking-tight">
               Simulateur BAC & <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r  from-black dark:from-white dark to-accent-2 dark:to-accent-2">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r  from-black dark:from-white dark to-blue-600 dark:to-blue-600">
                 Orientation
               </span>
             </h2>
@@ -76,7 +85,7 @@ export default function Orientation() {
 
           {/* Right 3D Glass Card */}
           <div className="relative perspective-1000">
-            <div className="relative p-8 md:p-10 rounded-[2.5rem] bg-white/80 dark:bg-white/5 backdrop-blur-2xl border border-gray-200 dark:border-white/10 shadow-2xl transition-all duration-500 hover:rotate-x-2 hover:rotate-y-2">
+            <div className="relative p-8 md:p-10 rounded-[2.5rem] bg-white/80 dark:bg-white/5 backdrop-blur-2xl border border-gray-200 dark:border-accent-2/30 shadow-2xl transition-all duration-500 hover:rotate-x-2 hover:rotate-y-2">
               <div className="text-[10px] font-black uppercase tracking-widest text-white/80 mb-8">
                 Simulation — BAC Informatique
               </div>
@@ -91,7 +100,7 @@ export default function Orientation() {
                     </div>
                     <div className="h-2 w-full bg-gray-200 dark:bg-black/20 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-accent-2 rounded-full"
+                        className="h-full bg-blue-600 rounded-full"
                         style={{ width: `${sub.percentage}%` }}
                       />
                     </div>
@@ -114,7 +123,7 @@ export default function Orientation() {
                 {universities.map((uni, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 rounded-full text-[11px] font-bold bg-gray-100 dark:bg-accent-light text-gray-700 dark:text-gray-300"
+                    className="px-3 py-1 rounded-full text-[11px] font-bold bg-gray-100 dark:bg-accent-light/20 text-gray-700 dark:text-gray-300"
                   >
                     {uni}
                   </span>
@@ -123,7 +132,7 @@ export default function Orientation() {
 
               {/* Footer Note */}
               <div className="flex items-center gap-4 mt-8 pt-6 border-t border-gray-200 dark:border-white/10">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-accent-2 to-accent-light " />
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-100 to-blue-900 " />
                 <p className="text-xs text-gray-600 dark:text-gray-400">
                   Tu es dans le <b>top 5 %</b>. Ces résultats t'ouvrent les
                   portes des meilleures écoles.

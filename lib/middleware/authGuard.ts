@@ -11,39 +11,11 @@ export async function authGuard(
 
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
-  const role = typeof token?.role === "string" ? token.role : undefined;
-
-  if (normalizedPathname.startsWith("/auth")) {
-    if (token) {
-      const redirectTo =
-        role === "admin" ? "/dashboard/parking/door" : "/dashboard/parking";
-      return NextResponse.redirect(new URL(redirectTo, req.url));
-    }
-    return;
-  }
-
-  if (normalizedPathname.startsWith("/moyenne")) {
-    return;
-  }
-
-  if (!token) {
-    return NextResponse.redirect(new URL("/auth/login", req.url));
-  }
-
-  if (["/en", "/fr"].includes(normalizedPathname)) {
-    const redirectTo =
-      role === "admin" ? "/dashboard/parking/door" : "/dashboard/parking";
-    return NextResponse.redirect(new URL(redirectTo, req.url));
-  }
-
-  if (normalizedPathname.startsWith("/dashboard/parking/door")) {
-    if (role === "admin") return;
-    return redirectUnauthorized(req);
-  }
+  // const role = typeof token?.role === "string" ? token.role : undefined;
 
   return;
 }
 
 function redirectUnauthorized(req: NextRequest): NextResponse {
-  return NextResponse.redirect(new URL("/dashboard/unauthorized", req.url));
+  return NextResponse.redirect(new URL("/unauthorized", req.url));
 }

@@ -1,3 +1,6 @@
+import { Sparkles } from "lucide-react";
+import SectionHeader from "./SectionHeader";
+
 export default function Features() {
   const features = [
     {
@@ -57,15 +60,9 @@ export default function Features() {
     >
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Le catalyseur de ta <span className="text-blue-600">réussite</span>
-          </h2>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
-            Une plateforme conçue par des experts pour dominer les matières
-            techniques et exceller dans tout ton cursus.
-          </p>
-        </div>
+
+        
+        <SectionHeader sectionTitle="Features" title="Le catalyseur de ta " customWord="réussite" desc="" />
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

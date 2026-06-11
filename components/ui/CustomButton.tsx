@@ -1,6 +1,6 @@
+import { Link } from "@/i18n/navigation";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 
 const CustomButton = ({
   title,

@@ -1,5 +1,7 @@
 "use client";
+import { Sparkles } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import SectionHeader from "./SectionHeader";
 
 interface Plan {
   name: string;
@@ -432,69 +434,13 @@ export default function Pricing() {
 
       <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
         {/* Header */}
-        <div
-          style={{
-            textAlign: "center",
-            marginBottom: "72px",
-            opacity: headerVisible ? 1 : 0,
-            transform: headerVisible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.7s ease, transform 0.7s ease",
-          }}
-        >
-          {/* Eyebrow */}
-          <span
-            style={{
-              display: "inline-block",
-              fontSize: "11px",
-              fontWeight: 700,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              color: "#3b82f6",
-              background: "rgba(59,130,246,0.1)",
-              border: "1px solid rgba(59,130,246,0.25)",
-              padding: "6px 16px",
-              borderRadius: "999px",
-              marginBottom: "24px",
-            }}
-          >
-            Tarification
-          </span>
 
-          <h2
-            style={{
-              fontSize: "clamp(32px, 5vw, 52px)",
-              fontWeight: 900,
-              color: "white",
-              margin: "0 0 16px 0",
-              lineHeight: 1.1,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Des tarifs{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #3b82f6, #818cf8)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              simples
-            </span>{" "}
-            et transparents
-          </h2>
-          <p
-            style={{
-              fontSize: "17px",
-              color: "rgba(255,255,255,0.45)",
-              maxWidth: "480px",
-              margin: "0 auto",
-              lineHeight: 1.6,
-            }}
-          >
-            Choisis l'accompagnement qui te permettra d'atteindre tes objectifs.
-          </p>
-        </div>
-
+        <SectionHeader
+          sectionTitle="Tarification"
+          title="Des tarifs simples et "
+          customWord="transparents"
+          desc="Choisis l'accompagnement qui te permettra d'atteindre tes objectifs."
+        />
         {/* Cards grid */}
         <div
           style={{
