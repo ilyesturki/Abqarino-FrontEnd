@@ -13,7 +13,9 @@ export default function OptionInput({ optionGrade, optionBonus, onOptionChange }
       <p className="text-xs text-slate-500 dark:text-slate-500 mb-3">Seuls les points au-dessus de 10 sont comptabilisés comme bonus.</p>
       <div className="grid gap-4 sm:grid-cols-[1.2fr_0.8fr] items-center">
         <input
-          type="text"
+          type="number"
+          min={0}
+          max={20}
           inputMode="decimal"
           value={optionGrade}
           onChange={(e) => onOptionChange(e.target.value)}

@@ -124,7 +124,7 @@ function getTunisianMessage(moyenne: number): {
   return {
     text: "YA SIDI HAAAAAA!! 20/20?? 👑 Kfech 3maltha hal note ?! Enti mouch kima el bachar, enti jey mel mosta9bel bch tfara7 9alb oumek! Legend!!",
     emoji: "👑",
-    color: "text-amber-400 dark:text-amber-300",
+    color: "text-amber-400 dark:text-slate-300",
     image: "/images/abqarino-love.png",
   };
 }
@@ -204,7 +204,7 @@ export default function Moyenne() {
     const section =
       sections.find((item) => item.id === sectionId) ?? sections[0];
     const resetGrades = section.subjects.reduce((acc, sub) => {
-      acc[sub.key] = "0";
+      acc[sub.key] = "";
       return acc;
     }, {} as Record<string, string>);
     setGrades(resetGrades);
@@ -222,7 +222,7 @@ export default function Moyenne() {
       : moyenne >= 12
       ? "from-green-400 to-lime-300"
       : moyenne >= 10
-      ? "from-amber-400 to-yellow-300"
+      ? "from-yellow-400 to-yellow-800"
       : moyenne >= 8
       ? "from-orange-400 to-amber-300"
       : "from-red-400 to-orange-400";

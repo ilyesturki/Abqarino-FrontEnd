@@ -34,7 +34,7 @@ const plans: Plan[] = [
   },
   {
     name: "PRO",
-    price: "49",
+    price: "89",
     per: "par trimestre",
     featured: true,
     badge: "Le plus populaire",
@@ -52,7 +52,7 @@ const plans: Plan[] = [
   },
   {
     name: "PRO MAX",
-    price: "89",
+    price: "129",
     per: "par trimestre",
     featured: false,
     gradient: "from-violet-700 to-purple-800",
