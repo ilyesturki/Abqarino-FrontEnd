@@ -17,14 +17,7 @@ export default function Orientation() {
       className="py-24 px-6 bg-gray-50 dark:bg-black-100 transition-colors duration-500"
       id="orientation"
     >
-      <SectionHeader
-        sectionTitle="Orientation"
-        title="Simulateur BAC & "
-        customWord="Orientation"
-        desc="Calcule ton score exact selon les coefficients officiels tunisiens
-              et visualise instantanément tes chances d'admission dans les
-              meilleures écoles."
-      />
+
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Text Content */}
