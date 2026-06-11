@@ -19,7 +19,7 @@ export default function Stats() {
   ];
 
   return (
-    <div className="relative py-20 z-10">
+    <div className="relative py-20 z-10 bg-slate-100 dark:bg-slate-900/70 mt-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-px bg-slate-900/5 dark:bg-white/5 sm:grid-cols-2 lg:grid-cols-4 rounded-xl overflow-hidden border border-slate-200/90 dark:border-slate-800">
           {stats.map((stat, index) => (
