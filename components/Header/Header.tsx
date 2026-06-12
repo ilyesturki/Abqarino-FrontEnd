@@ -1,5 +1,5 @@
 import CustomDropDownMenu from "../Common/CustomDropDownMenu";
-import ThemeToggle from "../Common/ThemeToggle/ThemeToggle";
+// import ThemeToggle from "../Common/ThemeToggle/ThemeToggle";
 import Logo from "./Logo";
 import NavMenu from "./NavMenu";
 import AccountDropDownMenu from "@/components/NavBar/CustomDropDownMenu/AccountDropDownMenu";

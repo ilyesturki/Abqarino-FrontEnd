@@ -3,21 +3,20 @@ import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 import LocaleSwitcher from "@/components/Common/LocaleSwitcher";
-import ThemeToggle1 from "@/components/Common/ThemeToggle/ThemeToggle1";
+import ThemeToggle from "@/components/Common/ThemeToggle/ThemeToggle";
 import NavMenu from "../Header/NavMenu";
 import { NAV_ITEMS } from "../Header/navigation.constants";
 import NavItem from "../Header/NavItem";
 
 const CustomDropDownMenu = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
 
   return (
     <>
       {/* Desktop view - always visible */}
       <div className="hidden md:flex items-center gap-2">
         {/* <ScanButton /> */}
-        <ThemeToggle1 />
+        <ThemeToggle />
         <LocaleSwitcher />
       </div>
 
@@ -42,7 +41,7 @@ const CustomDropDownMenu = () => {
                 </>
               ))}
               <div className="flex items-center justify-between pt-2">
-                <ThemeToggle1 />
+                <ThemeToggle />
                 <LocaleSwitcher />
               </div>
             </div>
