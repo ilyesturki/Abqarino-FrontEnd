@@ -29,8 +29,8 @@ export default function NavItem({
           py-2
           transition-all
           duration-200
-text-slate-600
-          dark:text-accent-dim text-xs font-bold tracking-widest
+        dark:text-slate-100
+          text-slate-800 text-xs font-bold tracking-widest
           ${
             active
               ? "opacity-100 !text-sky-500 drop-shadow-[0_0_0.5px] "

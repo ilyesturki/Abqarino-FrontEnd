@@ -15,26 +15,22 @@ export default function NavMenu() {
       return;
     }
 
-    const sections = NAV_ITEMS.filter((item) =>
-      item.href.includes("#")
-    ).map((item) => ({
-      href: item.href,
-      element: document.getElementById(item.href.split("#")[1]),
-    }));
+    const sections = NAV_ITEMS.filter((item) => item.href.includes("#")).map(
+      (item) => ({
+        href: item.href,
+        element: document.getElementById(item.href.split("#")[1]),
+      })
+    );
 
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
           .filter((entry) => entry.isIntersecting)
-          .sort(
-            (a, b) => b.intersectionRatio - a.intersectionRatio
-          );
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
         if (visible.length === 0) return;
 
-        const section = sections.find(
-          (s) => s.element === visible[0].target
-        );
+        const section = sections.find((s) => s.element === visible[0].target);
 
         if (section) {
           setActiveHref(section.href);
@@ -56,13 +52,9 @@ export default function NavMenu() {
   }, [pathname]);
 
   return (
-    <ul className="hidden md:flex items-center gap-1 rounded-full border border-sky-200 dark:border-accent-2/50 bg-gradient-to-r from-sky-100 via-blue-50 to-sky-100 dark:bg-none dark:bg-accent-light px-3 py-2.5 shadow-[0_4px_20px_rgba(59,130,246,0.08)]">
+    <ul className="hidden md:flex items-center gap-1 rounded-full border border-sky-200 dark:border-accent-2/50 bg-gradient-to-r from-sky-100/90 via-blue-50/90 to-sky-100/90 dark:bg-none dark:bg-accent-light px-3 py-2.5 shadow-[0_4px_20px_rgba(59,130,246,0.08)]">
       {NAV_ITEMS.map((item) => (
-        <NavItem
-          key={item.href}
-          {...item}
-          active={activeHref === item.href}
-        />
+        <NavItem key={item.href} {...item} active={activeHref === item.href} />
       ))}
     </ul>
   );

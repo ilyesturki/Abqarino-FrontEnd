@@ -24,7 +24,7 @@ const AnimatedName = ({ name, className }: Props) => {
             <span
               key={i}
               className={`text-md font-extrabold inline-block animate-fade-slide ml-[0.5px] ${
-                isLastTwo ? "text-amber" : "text-ink"
+                isLastTwo ? "text-amber" : "text-slate-900 dark:text-ink"
               }`}
             >
               {char}

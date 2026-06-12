@@ -22,7 +22,7 @@ export default function ThemeButton({ theme, onToggle }: Props) {
         "transition-all duration-500 ",
         isDark
           ? "bg-accent-light border border-accent-2/30 "
-          : "bg-gradient-to-r from-sky-100 via-blue-50 to-sky-100 border border-sky-200 shadow-[0_4px_20px_rgba(59,130,246,0.08)]",
+          : "bg-gradient-to-r from-sky-100/90 via-blue-50/90 to-sky-100/90 border border-sky-200 shadow-[0_4px_20px_rgba(59,130,246,0.08)]",
       ].join(" ")}
     >
       {/* Background decoration */}

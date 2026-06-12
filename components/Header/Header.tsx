@@ -6,7 +6,7 @@ import AccountDropDownMenu from "@/components/NavBar/CustomDropDownMenu/AccountD
 
 export default function Navigation() {
   return (
-    <header className="sticky top-0 z-50 dark:border-b shadow-[0_0_4px] shadow-slate-500 dark:shadow-none dark:border-white1/10 bg-white1/80 backdrop-blur-xl supports-[backdrop-filter]:bg-white1/20">
+    <header className="sticky top-0 z-50 dark:border-b shadow-[0_0_3px] shadow-slate-400 dark:shadow-none dark:border-white1/10 bg-white1/80 backdrop-blur-xl supports-[backdrop-filter]:bg-slate-400/10">
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         <Logo />
 
