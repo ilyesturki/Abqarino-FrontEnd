@@ -31,7 +31,11 @@ export default function NavItem({
           duration-200
 text-slate-600
           dark:text-accent-dim text-xs font-bold tracking-widest
-          ${active ? "opacity-100" : "opacity-70"}
+          ${
+            active
+              ? "opacity-100 !text-sky-500 drop-shadow-[0_0_0.5px] "
+              : "opacity-70"
+          }
         `}
       >
         <Icon
@@ -42,7 +46,22 @@ text-slate-600
         <span className="transition-transform duration-200 group-hover:scale-105">
           {label}
         </span>
-
+        {active && (
+          <span
+            className="
+              absolute
+              inset-x-3
+              bottom-0
+              h-px
+              bg-sky-500
+              shadow-[0_0_1px]
+              shadow-sky-500
+              transition-transform
+              duration-200
+              scale-x-100
+            "
+          />
+        )}
         {!active && (
           <span
             className="
