@@ -235,14 +235,14 @@ export default function Moyenne() {
           {/* <span className="inline-block rounded-full px-3.5 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.3em] text-indigo-700 ring-1 ring-inset ring-indigo-200 dark:bg-indigo-900/40 dark:text-indigo-300 dark:ring-indigo-500/20 mb-4">
             Plateforme éducative tunisienne 
           </span> */}
-          <h1 className="text-4xl sm:text-5xl font-black tracking-[0.5px] text-slate-900 dark:text-slate-50 ">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-[0.5px] text-slate-900 dark:text-slate-50 ">
             Prépare <span className=" text-amber">ton BAC.</span> <br /> Entre à{" "}
             <span className="text-amber">l'université</span> de tes rêves.
           </h1>
-          <p className="mt-4 text-sm text-slate-600 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">
-            Cours structurés, exercices adaptatifs, lives interactifs — tout le
-            programme officiel tunisien, avec un accent spécial sur
-            l\'Informatique et les les STI.
+          <p className="mt-4 text-xs text-slate-600 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">
+            Cours structurés, exercices corrigés et ressources complètes pour
+            maîtriser l'ensemble du programme tunisien, avec une attention
+            particulière à l'Informatique.
           </p>
         </div>
 

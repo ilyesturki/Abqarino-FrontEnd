@@ -16,11 +16,13 @@ export default function GradesGrid({
   onSportToggleChange,
 }: GradesGridProps) {
   return (
-    <div
-      className="rounded-xl border border-slate-200/90 bg-slate-100/70 p-6 dark:border-slate-800 dark:bg-slate-900/70"
-    >
-      <h3 className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-1">Notes par Matière</h3>
-      <p className="text-xs text-slate-500 dark:text-slate-500 mb-5">Saisissez vos notes sur 20.</p>
+    <div className="rounded-xl border border-slate-200/90 bg-slate-100/70 p-6 dark:border-slate-800 dark:bg-slate-900/70">
+      <h3 className="text-[10px] font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-1">
+        Notes par Matière
+      </h3>
+      <p className="text-xs text-slate-500 dark:text-slate-500 mb-5">
+        Saisissez vos notes sur 20.
+      </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
         {selectedSection.subjects.map((subject) => {
@@ -40,17 +42,29 @@ export default function GradesGrid({
             >
               <div className="flex justify-between items-start mb-2.5">
                 <div>
-                  <p className="text-sm font-bold text-slate-800 dark:text-slate-100 leading-tight">{subject.name}</p>
-                  <p className="text-[10px] text-slate-500 dark:text-slate-500 mt-0.5">Coefficient {subject.coef}</p>
+                  <p className="text-sm font-bold text-slate-800 dark:text-slate-100 leading-tight">
+                    {subject.name}
+                  </p>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-500 mt-0.5">
+                    Coefficient {subject.coef}
+                  </p>
                 </div>
                 {isHigh && (
                   <span className="text-xs text-emerald-500 dark:text-emerald-400">
-                    <img src="/images/abqarino-love.png" alt="High Grade" className="w-10 h-10" />
+                    <img
+                      src="/images/abqarino-love.png"
+                      alt="High Grade"
+                      className="w-10 h-10"
+                    />
                   </span>
                 )}
                 {isLow && (
                   <span className="text-xs text-red-500 dark:text-red-400">
-                    <img src="/images/abqarino-sad.png" alt="Low Grade" className="w-10 h-10" />
+                    <img
+                      src="/images/abqarino-sad.png"
+                      alt="Low Grade"
+                      className="w-10 h-10"
+                    />
                   </span>
                 )}
               </div>
@@ -59,7 +73,13 @@ export default function GradesGrid({
                 inputMode="decimal"
                 value={grades[subject.key] ?? ""}
                 onChange={(e) => onGradeChange(subject.key, e.target.value)}
-                placeholder={subject.isSport ? (sportToggleExempted ? "Exempté" : "0 – 20") : "0 – 20"}
+                placeholder={
+                  subject.isSport
+                    ? sportToggleExempted
+                      ? "Exempté"
+                      : "0 – 20"
+                    : "0 – 20"
+                }
                 disabled={subject.isSport && sportToggleExempted}
                 className="w-full rounded-lg border border-slate-200/90 bg-slate-200/70 px-3 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 outline-none transition-all focus:border-indigo-500/60 disabled:cursor-not-allowed disabled:bg-slate-200/80 dark:disabled:bg-slate-800/40 disabled:text-slate-500 dark:border-slate-700/80 dark:bg-slate-800/70 dark:text-slate-50 dark:placeholder:text-slate-600"
               />
@@ -67,22 +87,26 @@ export default function GradesGrid({
               {subject.isSport && (
                 <div className="mt-3 flex items-center justify-between gap-3 border-t border-slate-200/80 dark:border-slate-800/80 pt-3">
                   <label className="inline-flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
-                    <div className="relative inline-flex h-7 w-14 shrink-0 items-center rounded-full bg-slate-200/80 dark:bg-slate-800/50 p-1 transition-colors duration-200 peer-checked:bg-indigo-500/40">
+                    <div className="cursor-pointer relative inline-flex h-7 w-14 shrink-0 items-center rounded-full bg-slate-200/80 dark:bg-slate-800/50 p-1 transition-colors duration-200 peer-checked:bg-indigo-500/40">
                       <input
                         type="checkbox"
                         checked={sportToggleExempted}
                         onChange={(e) => onSportToggleChange(e.target.checked)}
                         className="peer sr-only"
                       />
-                      <span className="pointer-events-none inline-block h-5 w-5 translate-x-0 rounded-full bg-white dark:bg-slate-900 shadow-sm ring-1 ring-slate-900/5 transition-all duration-200 peer-checked:translate-x-7 peer-checked:bg-indigo-500" />
+                      <span className="pointer-events-none inline-block h-5 w-5 translate-x-0 rounded-full bg-white dark:bg-amber shadow-sm ring-1 ring-slate-900/5 transition-all duration-200 peer-checked:translate-x-7 peer-checked:bg-amber/60" />
                     </div>
-                    <span className="font-medium text-slate-800 dark:text-slate-100">Dispense d&apos;Éducation Physique</span>
+                    <span className="font-medium text-slate-800 dark:text-slate-100">
+                      Dispense d&apos;Éducation Physique
+                    </span>
                   </label>
-                  <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${
-                    sportToggleExempted
-                      ? "bg-amber-100/80 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300"
-                      : "bg-slate-200/60 text-slate-600 dark:bg-slate-800/60 dark:text-slate-300"
-                  }`}>
+                  <span
+                    className={`rounded-full px-2 py-0.5 text-[10px] font-semibold text-amber ${
+                      sportToggleExempted
+                        ? "bg-amber/60 text-amber dark:bg-amber/10 dark:text-amber"
+                        : "bg-amber/80 text-amber dark:bg-amber/15 dark:text-amber"
+                    }`}
+                  >
                     {sportToggleExempted ? "Exempté" : "Inclus"}
                   </span>
                 </div>
