@@ -283,8 +283,8 @@ export default function Moyenne() {
         </div>
       </div>
 
-      <div className="fixed bottom-0 -right-20 z-40 pointer-events-none hidden md:block animate-in slide-in-from-bottom-10 duration-700">
-        <div className="relative w-80 h-110">
+      <div className="fixed bottom-0 -right-16 md:-right-20 z-40 pointer-events-none block animate-in slide-in-from-bottom-10 duration-700">
+        <div className="relative w-52 md:w-80 ">
           <img
             src="/images/bg-caractere.png"
             alt="Abqarino"

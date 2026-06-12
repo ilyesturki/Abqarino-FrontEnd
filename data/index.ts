@@ -174,11 +174,11 @@ export const socialMedia: SocialMediaItem[] = [
   {
     id: 1,
     img: "/imgs/fbIcon.png",
-    link: "https://github.com/ilyesturki",
+    link: "https://www.facebook.com/profile.php?id=61590755906899",
   },
   {
     id: 2,
     img: "/imgs/instagramIcon.png",
-    link: "https://linkedin.com/in/ilyesturki",
+    link: "https://www.instagram.com/abqarino_",
   },
 ];

@@ -36,7 +36,7 @@ export default function NavItem({
       >
         <Icon
           size={15}
-          className="transition-transform duration-200 group-hover:scale-105"
+          className="transition-transform duration-200 group-hover:scale-105 max-sm:text-amber"
         />
 
         <span className="transition-transform duration-200 group-hover:scale-105">
@@ -54,7 +54,7 @@ export default function NavItem({
               bg-accent-dim
               transition-transform
               duration-200
-              group-hover:scale-x-100
+              sm:group-hover:scale-x-100
             "
           />
         )}
