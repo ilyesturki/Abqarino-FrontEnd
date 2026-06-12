@@ -28,9 +28,35 @@ export default function GradesGrid({
         {selectedSection.subjects.map((subject) => {
           const isExemptedField = subject.isSport && sportToggleExempted;
           const gradeVal = parseGrade(grades[subject.key] ?? "");
-          const isHigh = gradeVal >= 14;
-          const isLow = gradeVal > 0 && gradeVal < 8;
-
+          // const isHigh = gradeVal >= 14;
+          // const isLow = gradeVal > 0 && gradeVal < 8;
+          const gradeMood =
+            gradeVal >= 18
+              ? {
+                  image: "/images/abqarino-love.png",
+                  alt: "Excellent",
+                }
+              : gradeVal >= 15
+              ? {
+                  image: "/images/abqarino-cool.png",
+                  alt: "Très Bien",
+                }
+              : gradeVal >= 10
+              ? {
+                  image: "/images/abqarino-happy.png",
+                  alt: "Bien",
+                }
+              : gradeVal >= 8
+              ? {
+                  image: "/images/abqarino-thinking.png",
+                  alt: "Peut mieux faire",
+                }
+              : gradeVal > 0
+              ? {
+                  image: "/images/abqarino-sad.png",
+                  alt: "Aïe",
+                }
+              : null;
           return (
             <div
               key={subject.key}
@@ -49,7 +75,14 @@ export default function GradesGrid({
                     Coefficient {subject.coef}
                   </p>
                 </div>
-                {isHigh && (
+                {gradeMood && (
+                  <img
+                    src={gradeMood.image}
+                    alt={gradeMood.alt}
+                    className="w-10 h-10 animate-in fade-in duration-300"
+                  />
+                )}
+                {/* {isHigh && (
                   <span className="text-xs text-emerald-500 dark:text-emerald-400">
                     <img
                       src="/images/abqarino-love.png"
@@ -66,7 +99,7 @@ export default function GradesGrid({
                       className="w-10 h-10"
                     />
                   </span>
-                )}
+                )} */}
               </div>
               <input
                 type="text"
