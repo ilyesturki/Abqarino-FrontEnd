@@ -30,7 +30,7 @@ export default function NavItem({
           transition-all
           duration-200
         dark:text-slate-100
-          text-slate-800 text-xs font-bold tracking-widest
+          text-slate-900 text-xs font-bold tracking-widest
           ${
             active
               ? "opacity-100 !text-sky-500 drop-shadow-[0_0_0.5px] "

@@ -80,7 +80,7 @@ export default function LocaleSwitcherSelect({
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 mt-2 w-full dark:text-slate-100 text-slate-800 text-xs font-bold tracking-widest rounded-md border border-sky-200 dark:border-accent-2/50 bg-gradient-to-r from-sky-100/90 via-blue-50/90 to-sky-100/90 dark:bg-none dark:bg-accent-light z-50">
+        <div className="absolute left-0 mt-3 w-full dark:text-slate-100 text-slate-800 text-xs font-bold tracking-widest rounded-md border border-sky-200 dark:border-accent-2/50 bg-gradient-to-r from-sky-100/90 via-blue-50/90 to-sky-100/90 dark:bg-none dark:bg-accent-light z-50">
           {availableLocales.map((locale, i) => (
             <>
               <button

@@ -14,10 +14,10 @@ export default function HeroContent() {
         de tes rêves.
       </h1>
 
-      <p className="text-base text-ink-2 leading-[1.7] max-w-md mb-9">
+      <p className="text-base text-slate-700 dark:text-ink-2 leading-[1.7] max-w-md mb-9">
         Cours structurés, exercices adaptatifs, lives interactifs — tout le
-        programme officiel tunisien, avec un accent spécial sur
-        l'Informatique et les STI.
+        programme officiel tunisien, avec un accent spécial sur l'Informatique
+        et les STI.
       </p>
 
       <HeroActions />

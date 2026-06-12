@@ -14,7 +14,7 @@ export default function Orientation() {
 
   return (
     <section
-      className="py-24 px-6 bg-gray-50 dark:bg-black-100 transition-colors duration-500"
+      className="py-24 px-6  dark:bg-black-100 transition-colors duration-500"
       id="orientation"
     >
       <div className="max-w-7xl mx-auto">

@@ -31,7 +31,7 @@ const CustomDropDownMenu = () => {
         </button>
 
         {isMobileMenuOpen && (
-          <div className="absolute right-0 mt-6 w-[200px] bg-grayscale-100 dark:bg-slate-900/95 rounded-md shadow-sm py-1 z-50 border border-accent-2/30">
+          <div className="absolute right-0 mt-6 w-[200px] bg-gradient-to-r from-sky-100/90 via-blue-50/90 to-sky-100/90 dark:bg-none dark:bg-slate-900/95 rounded-md shadow-sm py-1 z-50 border border-accent-2/30">
             <div className="flex flex-col gap-2 px-2 py-1">
               {/* <ScanButton /> */}
               {NAV_ITEMS.map((item) => (

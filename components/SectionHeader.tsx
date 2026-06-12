@@ -25,11 +25,11 @@ export default function SectionHeader({
       <p
         style={{
           fontSize: "17px",
-          color: "rgba(255,255,255,0.45)",
           maxWidth: "550px",
           margin: "0 auto",
           lineHeight: 1.6,
         }}
+        className="text-slate-600 dark:text-slate-400"
       >
         {desc}
       </p>

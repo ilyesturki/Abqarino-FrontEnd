@@ -55,9 +55,9 @@ const plans: Plan[] = [
     price: "129",
     per: "par trimestre",
     featured: false,
-    gradient: "from-violet-700 to-purple-800",
-    glowColor: "rgba(139,92,246,0.2)",
-    accentColor: "#8b5cf6",
+    gradient: "from-slate-700 to-slate-800",
+    glowColor: "rgba(148,163,184,0.15)",
+    accentColor: "#94a3b8",
     items: [
       "Tout le contenu PRO",
       "2 Meets 1-to-1 par mois",
@@ -116,30 +116,28 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
           transform: `rotateX(${rotation.x}deg) rotateY(${
             rotation.y
           }deg) translateZ(${isHovered ? "10px" : "0px"})`,
-          transition: isHovered
-            ? "transform 0.1s ease"
-            : "transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)",
-          transformStyle: "preserve-3d",
+          transition: "transform 0.1s ease",
+          // transformStyle: "preserve-3d",
           borderRadius: "24px",
           position: "relative",
         }}
       >
         {/* Glow backdrop */}
-        <div
+        {/* <div
           style={{
             position: "absolute",
             inset: "-2px",
             borderRadius: "26px",
             background: `radial-gradient(ellipse at center, ${plan.glowColor}, transparent 70%)`,
-            opacity: isHovered || plan.featured ? 1 : 0,
+            // opacity: isHovered || plan.featured ? 1 : 0,
             transition: "opacity 0.4s ease",
             // filter: "blur(8px)",
             zIndex: -1,
           }}
-        />
+        /> */}
 
         {/* Sheen overlay that follows mouse */}
-        <div
+        {/* <div
           style={{
             position: "absolute",
             inset: 0,
@@ -149,26 +147,35 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
             }%, rgba(255,255,255,0.07))`,
             pointerEvents: "none",
             zIndex: 2,
-            transition: isHovered ? "none" : "background 0.5s ease",
+            // transition: isHovered ? "none" : "background 0.5s ease",
           }}
-        />
+        /> */}
 
         <div
           style={{
-            background: plan.featured
-              ? "linear-gradient(145deg, #1e2a4a 0%, #0d1730 100%)"
-              : "linear-gradient(145deg, #111827 0%, #0b1120 100%)",
-            border: `1px solid ${
-              plan.featured ? plan.accentColor + "60" : "rgba(255,255,255,0.07)"
-            }`,
+            // background: plan.featured
+            //   ? "linear-gradient(145deg, #1e2a4a 0%, #0d1730 100%)"
+            //   : "linear-gradient(145deg, #111827 0%, #0b1120 100%)",
+            // border: `1px solid ${
+            //   plan.featured ? plan.accentColor + "60" : "rgba(255,255,255,0.07)"
+            // }`,
             borderRadius: "24px",
             padding: "36px 32px",
             position: "relative",
             // overflow: "hidden",
             boxShadow: plan.featured
-              ? `0 25px 60px ${plan.glowColor}, 0 0 0 1px ${plan.accentColor}30`
-              : `0 10px 40px rgba(0,0,0,0.4)`,
+              ? `0 5px 25px ${plan.glowColor}, 0 0 0 1px ${plan.accentColor}30`
+              : `0 5px 25px rgba(0,0,0,0.1)`,
           }}
+          className="
+          border border-blue-900/20 dark:border-blue-900
+    rounded-3xl
+    bg-gradient-to-br
+    from-sky-50
+    to-sky-100
+    dark:from-slate-900
+    dark:to-slate-950
+  "
         >
           {/* Animated grid lines */}
           <div
@@ -178,7 +185,7 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
               backgroundImage: `linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px)`,
               backgroundSize: "40px 40px",
               borderRadius: "24px",
-              opacity: isHovered ? 1 : 0.5,
+              // opacity: isHovered ? 1 : 0.5,
               transition: "opacity 0.4s ease",
             }}
           />
@@ -256,13 +263,13 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
                   style={{
                     fontSize: "60px",
                     fontWeight: 900,
-                    color: "white",
                     lineHeight: 1,
                     fontVariantNumeric: "tabular-nums",
                     textShadow: plan.featured
                       ? `0 0 40px ${plan.accentColor}50`
                       : "none",
                   }}
+                  className="text-sky-600 dark:text-ink"
                 >
                   {plan.price}
                 </span>
@@ -271,18 +278,18 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
                     style={{
                       fontSize: "18px",
                       fontWeight: 600,
-                      color: "rgba(255,255,255,0.5)",
                       lineHeight: 1,
                     }}
+                    className="text-sky-500 dark:text-slate-500"
                   >
                     DT
                   </div>
                   <div
                     style={{
                       fontSize: "12px",
-                      color: "rgba(255,255,255,0.35)",
                       marginTop: "2px",
                     }}
+                    className="text-sky-500 dark:text-slate-500"
                   >
                     {plan.per}
                   </div>
@@ -318,7 +325,6 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
                     alignItems: "center",
                     gap: "12px",
                     fontSize: "14px",
-                    color: "rgba(255,255,255,0.7)",
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible
                       ? "translateX(0)"
@@ -327,6 +333,7 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
                       index * 0.15 + i * 0.07 + 0.3
                     }s, transform 0.5s ease ${index * 0.15 + i * 0.07 + 0.3}s`,
                   }}
+                  className="text-slate-600 dark:text-slate-200"
                 >
                   <span
                     style={{
@@ -359,10 +366,9 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
                 border: plan.featured
                   ? "none"
                   : `1px solid ${plan.accentColor}40`,
-                background: plan.featured
-                  ? `linear-gradient(135deg, ${plan.accentColor}, #6366f1)`
-                  : "transparent",
-                color: "white",
+                // background: plan.featured
+                //   ? `linear-gradient(135deg, ${plan.accentColor}, #6366f1)`
+                //   : "transparent",
                 fontSize: "14px",
                 fontWeight: 700,
                 cursor: "pointer",
@@ -374,6 +380,7 @@ function PricingCard({ plan, index }: { plan: Plan; index: number }) {
                   ? `0 8px 30px ${plan.accentColor}50`
                   : "none",
               }}
+              className=" !bg-sky-700 text-ink"
               onMouseEnter={(e: React.MouseEvent<HTMLButtonElement>) => {
                 if (plan.featured) {
                   e.currentTarget.style.boxShadow = `0 12px 40px ${plan.accentColor}70`;
@@ -418,7 +425,7 @@ export default function Pricing() {
         fontFamily: "'Inter', system-ui, sans-serif",
       }}
       id="pricing"
-      className="bg-black-100"
+      className="dark:bg-black-100"
     >
       <style>{`
         @keyframes pulse-orb {
@@ -461,10 +468,10 @@ export default function Pricing() {
             textAlign: "center",
             marginTop: "48px",
             fontSize: "13px",
-            color: "rgba(255,255,255,0.25)",
             opacity: headerVisible ? 1 : 0,
             transition: "opacity 1s ease 0.8s",
           }}
+          className="text-slate-900/60 dark:text-ink/50"
         >
           Paiement sécurisé · Annulation à tout moment · Support inclus
         </p>
