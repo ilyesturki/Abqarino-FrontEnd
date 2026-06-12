@@ -119,13 +119,13 @@ export default function GradesGrid({
 
               {subject.isSport && (
                 <div className="mt-3 flex items-center justify-between gap-2 border-t border-slate-200/80 dark:border-slate-800/80 pt-3">
-                  <label className="inline-flex items-center gap-3 text-sm">
+                  {/* <label className="inline-flex items-center gap-3 text-sm">
                     <div className="relative inline-flex h-7 w-14 shrink-0 items-center rounded-full bg-slate-200 dark:bg-slate-800 p-1 transition-colors duration-300 peer-checked:bg-emerald-500/25 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={sportToggleExempted}
                         onChange={(e) => onSportToggleChange(e.target.checked)}
-                        className="peer sr-only"
+                        className="peer sr-only !w-full !h-full !bg-red-500 z-50"
                       />
 
                       <span className="pointer-events-none inline-block h-5 w-5 rounded-full bg-white dark:bg-slate-100 shadow-md transition-all duration-300 peer-checked:translate-x-7 peer-checked:bg-emerald-500 peer-checked:shadow-emerald-500/30" />
@@ -134,8 +134,27 @@ export default function GradesGrid({
                     <span className="font-medium text-xs text-slate-800 dark:text-slate-500">
                       Dispense d&apos;Éducation Physique
                     </span>
+                  </label> */}
+                  <label className="inline-flex items-center gap-3 text-sm cursor-pointer">
+                    <div className="relative inline-flex h-7 w-14 shrink-0 items-center rounded-full bg-slate-200 dark:bg-slate-800 p-1 transition-colors duration-300 has-[:checked]:bg-emerald-500/25">
+                      <input
+                        type="checkbox"
+                        checked={sportToggleExempted}
+                        onChange={(e) => onSportToggleChange(e.target.checked)}
+                        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                      />
+                      <span
+                        className={`pointer-events-none inline-block h-5 w-5 rounded-full shadow-md transition-all duration-300 ${
+                          sportToggleExempted
+                            ? "translate-x-7 bg-emerald-500 shadow-emerald-500/30"
+                            : "bg-white dark:bg-slate-100"
+                        }`}
+                      />
+                    </div>
+                    <span className="font-medium text-xs text-slate-800 dark:text-slate-500">
+                      Dispense d&apos;Éducation Physique
+                    </span>
                   </label>
-
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-[10px] font-semibold transition-colors ${
                       sportToggleExempted
