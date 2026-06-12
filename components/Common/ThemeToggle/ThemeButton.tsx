@@ -22,7 +22,7 @@ export default function ThemeButton({ theme, onToggle }: Props) {
         "transition-all duration-500 ",
         isDark
           ? "bg-accent-light border border-accent-2/30 "
-          : "bg-amber-100 border-amber-300 shadow-[0_0_25px_rgba(251,191,36,0.1)]",
+          : "bg-gradient-to-r from-sky-100 via-blue-50 to-sky-100 border border-sky-200 shadow-[0_4px_20px_rgba(59,130,246,0.08)]",
       ].join(" ")}
     >
       {/* Background decoration */}
@@ -44,8 +44,17 @@ export default function ThemeButton({ theme, onToggle }: Props) {
           </>
         ) : (
           <>
-            <span className="absolute right-3 top-2 opacity-60">☁️</span>
-            <span className="absolute right-8 bottom-1 opacity-40">☁️</span>
+            <span className="absolute right-3 top-1 text-sm opacity-90">
+              ☀️
+            </span>
+
+            <span className="absolute right-8 bottom-1 text-[10px] text-sky-500 opacity-50">
+              ✦
+            </span>
+
+            <span className="absolute right-5 top-4 text-[8px] text-sky-400 opacity-40">
+              ✦
+            </span>
           </>
         )}
       </div>
@@ -66,7 +75,11 @@ export default function ThemeButton({ theme, onToggle }: Props) {
           width={36}
           height={36}
           priority
-          className="object-contain bg-transparent border border-accent-2/30 rounded-full "
+          className={`
+            object-contain rounded-full
+            border
+            ${isDark ? "border-accent-2/30" : "border-sky-200 shadow-sm"}
+          `}
         />
       </span>
     </button>

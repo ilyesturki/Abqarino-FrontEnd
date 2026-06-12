@@ -20,7 +20,7 @@ import Footer from "@/components/Common/Footer/Footer";
 // ];
 export default function Home() {
   return (
-    <main className="min-h-screen relative bg-black-100 overflow-clip">
+    <main className="min-h-screen relative bg-slate-100 dark:bg-black-100 overflow-clip">
       {/* <FloatingNav navItems={navItems} /> */}
       <Header />
       <Hero />

@@ -85,26 +85,29 @@ export default function GradesGrid({
               />
 
               {subject.isSport && (
-                <div className="mt-3 flex items-center justify-between gap-3 border-t border-slate-200/80 dark:border-slate-800/80 pt-3">
-                  <label className="inline-flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
-                    <div className="cursor-pointer relative inline-flex h-7 w-14 shrink-0 items-center rounded-full bg-slate-200/80 dark:bg-slate-800/50 p-1 transition-colors duration-200 peer-checked:bg-indigo-500/40">
+                <div className="mt-3 flex items-center justify-between gap-2 border-t border-slate-200/80 dark:border-slate-800/80 pt-3">
+                  <label className="inline-flex items-center gap-3 text-sm">
+                    <div className="relative inline-flex h-7 w-14 shrink-0 items-center rounded-full bg-slate-200 dark:bg-slate-800 p-1 transition-colors duration-300 peer-checked:bg-emerald-500/25 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={sportToggleExempted}
                         onChange={(e) => onSportToggleChange(e.target.checked)}
                         className="peer sr-only"
                       />
-                      <span className="pointer-events-none inline-block h-5 w-5 translate-x-0 rounded-full bg-white dark:bg-amber shadow-sm ring-1 ring-slate-900/5 transition-all duration-200 peer-checked:translate-x-7 peer-checked:bg-amber/60" />
+
+                      <span className="pointer-events-none inline-block h-5 w-5 rounded-full bg-white dark:bg-slate-100 shadow-md transition-all duration-300 peer-checked:translate-x-7 peer-checked:bg-emerald-500 peer-checked:shadow-emerald-500/30" />
                     </div>
-                    <span className="font-medium text-slate-800 dark:text-slate-100">
+
+                    <span className="font-medium text-xs text-slate-800 dark:text-slate-500">
                       Dispense d&apos;Éducation Physique
                     </span>
                   </label>
+
                   <span
-                    className={`rounded-full px-2 py-0.5 text-[10px] font-semibold text-amber ${
+                    className={`rounded-full px-2.5 py-0.5 text-[10px] font-semibold transition-colors ${
                       sportToggleExempted
-                        ? "bg-amber/60 text-amber dark:bg-amber/10 dark:text-amber"
-                        : "bg-amber/80 text-amber dark:bg-amber/15 dark:text-amber"
+                        ? "bg-emerald-500/15 text-emerald-600 dark:bg-emerald-500/20 dark:text-emerald-400"
+                        : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400"
                     }`}
                   >
                     {sportToggleExempted ? "Exempté" : "Inclus"}

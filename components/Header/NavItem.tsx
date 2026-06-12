@@ -29,14 +29,14 @@ export default function NavItem({
           py-2
           transition-all
           duration-200
-
-          text-accent-dim text-xs font-bold tracking-widest
+text-slate-600
+          dark:text-accent-dim text-xs font-bold tracking-widest
           ${active ? "opacity-100" : "opacity-70"}
         `}
       >
         <Icon
           size={15}
-          className="transition-transform duration-200 group-hover:scale-105 max-sm:text-amber"
+          className="transition-transform duration-200 group-hover:scale-105  max-sm:text-amber"
         />
 
         <span className="transition-transform duration-200 group-hover:scale-105">
