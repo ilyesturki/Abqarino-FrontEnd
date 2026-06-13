@@ -30,7 +30,7 @@ function getTunisianMessage(moyenne: number): {
       color: "text-slate-500 dark:text-slate-400",
       image: "/images/abqarino-thinking.png",
     };
-  if (moyenne < 5)
+  if (moyenne < 7)
     return {
       text: "Akhi... hedhi mouch 7ata contrôle, hedhi s3iba chwaya 💀 Ama l'hamdoullah méfama chay b3id, ma tkhamamch , la3alla fiha 5ira !",
       emoji: "😬",
@@ -58,7 +58,7 @@ function getTunisianMessage(moyenne: number): {
       color: "text-yellow-500 dark:text-yellow-400",
       image: "/images/abqarino-thinking.png",
     };
-  if (moyenne < 11) 
+  if (moyenne < 11)
     return {
       text: "Mna3t! selket selket 😅 Moyenne b d3a l 5ir hedha, ama t3adit! Chwaya grinta fel fac bech tebda tenja7 merte7!",
       emoji: "😅",

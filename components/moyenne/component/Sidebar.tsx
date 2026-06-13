@@ -24,6 +24,19 @@ export default function Sidebar({
 }: SidebarProps) {
   return (
     <div className="space-y-5">
+      <div className="rounded-xl border border-slate-200/90 bg-slate-100/70 p-6 flex flex-col items-center text-center gap-3 dark:border-slate-800 dark:bg-slate-900/70">
+        <span className="text-[10px] text-slate-500 dark:text-slate-400 w-full text-left">
+          <AnimatedName name="abqarino" className="text-base" />
+        </span>
+        <img
+          src={currentVerdict.image}
+          alt="Abqarino"
+          className="w-36 h-36 border-2 border-slate-200 dark:border-slate-700/60 m-1 rounded-full object-contain drop-shadow-lg bg-slate-200/70 dark:bg-slate-800/50"
+        />
+        <p className={`text-sm font-semibold ${currentVerdict.color}`}>
+          {currentVerdict.text}
+        </p>
+      </div>
       {showResults && (
         <>
           <div className="rounded-xl border border-slate-200/90 bg-slate-100/70 p-6 dark:border-slate-800 dark:bg-slate-900/70">
@@ -47,21 +60,6 @@ export default function Sidebar({
           </div>
         </>
       )}
-
-      <div className="rounded-xl border border-slate-200/90 bg-slate-100/70 p-6 flex flex-col items-center text-center gap-3 dark:border-slate-800 dark:bg-slate-900/70">
-        <span className="text-[10px] text-slate-500 dark:text-slate-400 w-full text-left">
-          <AnimatedName name="abqarino" className="text-base" />
-        </span>
-        <img
-          src={currentVerdict.image}
-          alt="Abqarino"
-          className="w-36 h-36 border-2 border-slate-200 dark:border-slate-700/60 m-1 rounded-full object-contain drop-shadow-lg bg-slate-200/70 dark:bg-slate-800/50"
-        />
-        <p className={`text-sm font-semibold ${currentVerdict.color}`}>
-          {currentVerdict.text}
-        </p>
-      </div>
-
       <div className="rounded-xl border border-slate-200/90 bg-slate-100/70 p-5 text-xs space-y-4 dark:border-slate-800 dark:bg-slate-900/70">
         <h4 className="font-bold uppercase tracking-widest text-[10px] text-slate-500 dark:text-slate-400">
           Formules réglementaires
